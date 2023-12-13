@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMPLOYEE INFORMATION</title>
+    <style>
+        body
+    {
+        
+        background: url('./public/show2.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 1500px;
+        height: 1000px;
+    }
+.cl1
+{
+    width:1100px;
+    height:1000;
+    /*background-color: red;*/
+    color:rgb(0, 0, 7);
+    font-size: 30px;
+
+}
+
+.cl1 ul li
+{
+	float:left;
+	width:150px;
+	height:30px;
+	/*background:cyan;*/
+	list-style:none;
+	border:#0F0 solid 1px;	
+	margin-top:-110px;
+	margin-left:1050px;
+	text-align:center;
+	line-height:30px;
+	border-bottom-left-radius:50px;
+	border-top-right-radius:50px;
+	position:relative;
+    border-radius: 50px;
+    font-size: 30px;
+	
+}
+.cl1 a
+{
+	text-decoration:none;
+	color:rgb(0, 0, 8);
+	display:block;
+}
+
+.cl1 ul li:hover
+{
+	background:#C06;
+	font-size:44px;
+	font-weight:bold;
+    color:wheat;
+    width:250px;
+    height:70px;
+    line-height: 60px;
+}
+
+
+        table{
+            margin: auto;
+            width: 100%;
+            max-width: 800px;
+        }
+
+
+        table,
+        td,
+        th {
+            padding: 8px 16px;
+            border-collapse: collapse;
+            border: 1px solid rgb(153, 153, 153);
+        }
+
+        tr:nth-child(even){
+            background-color: #ddd;
+        }
+     .cl
+     {
+       /* background-color:red;*/
+        height:800px;
+     }
+
+    </style>
+</head>
+
+<body>
+    
+<div class="cl">
+    <% /* %><%- include('calcu') %>--><% */ %>
+<div class="cl1"><p style="margin-left:250px;text-decoration: underline; margin-top:15px; font-size:60px; color:rgb(14, 14, 0);">EMPLOYEE INFORMATION</p>
+    <ul>
+        <li><a href='home'>HOME</a></li> 
+        </ul>
+     
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Emp Id</th>
+            <th>Salary</th>
+            <th>Pics</th>
+            <th>Action</th>
+        
+        </tr>
+
+        <% for(var i=0; i<data.length; i++) { %>
+            <tr>
+                <td>
+                    <%= data[i][0] %>
+                </td>
+                <td>
+                    <%= data[i][1] %>
+                </td>
+                <td>
+                    <%= data[i][2] %>
+                </td>
+                <td>
+                       <img src="<%= data[i][3] %> " width="60px" height="60px" /> 
+                       
+
+                </td>
+                <td>
+                    <a href="delete?empid=<%= data[i][1] %>" >Delete</a> 
+             </td>
+            </tr>
+            <% } %>
+    
+    </table>
+    </div>
+</div>
+    </div>
+<script>
+let data = '<%- data %>'
+console.log(data)
+</script>
+
+</body>
+
+</html>

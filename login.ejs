@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<style>
+body
+    {
+        display: flex;
+        background: url('./public/dd.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+        
+       /* background-image: image-set("./public/pp.jpg");*/
+       /*width: 1500px;*/
+       /*height: 500px;*/
+      /* background-color: blue;*/
+       justify-content: center;
+       align-items: center;
+       min-height: 650px;
+    }
+    </style>
+<body>
+    <form action="/login" method="post">
+
+        <input name="user" type="text" placeholder="ENTER USER..." style="width:400px;height:50px;background-color:#FF0;color:#00F;font-size:50px ; border-radius: 30px; background: transparent;" ><br><br><br>
+        <input name="password" type="password" placeholder="ENTER PASSWORD..." style="width:400px;height:50px;background-color:#FF0;color:#00F;font-size:50px ;border-radius: 30px;" ><br><br><br>
+        <input type="submit" value="LOG IN" style="width:200px;height:50px;background-color:#FF0;color:#00F;font-size:40px ; margin-left: 100px; border-radius: 40px;" /><br><br>
+      </form>
+    
+</body>
+</html>

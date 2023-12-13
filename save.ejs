@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAVE RECORD</title>
+    <style> 
+    body
+    {
+        background: url('./public/save1.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 1500px;
+        height: 900px;
+    }
+    .cl
+    {
+        /*background-color: aqua;*/
+        width:900 px;
+        height:1200 px;
+        /*margin-top: 200px;*/
+    }
+    .cl1
+    {
+      /*  background-color:red;*/
+        width:1500px;
+        height: 100px;  
+    }
+    .cl1 ul li
+{
+	float:left;
+	width:150px;
+	height:30px;
+	background:cyan;
+	list-style:none;
+	border:#0F0 solid 1px;	
+	margin-top:-110px;
+	margin-left:1100px;
+	text-align:center;
+	line-height:30px;
+	border-bottom-left-radius:50px;
+	border-top-right-radius:50px;
+	position:relative;
+    border-radius: 50px;
+    font-size: 30px;
+	
+}
+.cl1 a
+{
+	text-decoration:none;
+	color:#00F;
+	display:block;
+}
+
+.cl1 ul li:hover
+{
+	background:#C06;
+	font-size:44px;
+	font-weight:bold;
+    color:wheat;
+    width:250px;
+    height:70px;
+    line-height: 60px;
+}
+
+ 
+    </style>
+</head>
+<body>
+    <div class="cl1"><p style="margin-left:10px;text-decoration: underline; margin-top:15px; font-size:60px; color:#FF0;">ENTER EMPLOYEE INFORMATION</p>
+        <ul>
+            <li><a href='home'>HOME</a></li> 
+            </ul>
+        
+    </div>
+    <div class="cl">
+    <form action="/save" method="post" enctype="multipart/form-data">
+
+  
+        <br> <br>
+        <label style="background-color: yellow;color:blue;font-size:30px;">ENTER NAME</label>     <input name="name" type="text" placeholder="Enter name" style="background:transparent;color:blue;font-size:30px;margin-left: 10px;">
+        <br> <br>
+        <label style="background-color: yellow;color:blue;font-size:30px;">ENTER EMP NO</label>     <input name="empno" type="text" placeholder="Enter emp no..." style="background:transparent;color:blue;font-size:30px;margin-left: 10px;">
+        <br> <br>
+        <label style="background-color: yellow;color:blue;font-size:30px;">ENTER SALARY
+        </label>  <input name="salary" type="text" placeholder="Enter salary" style="background:transparent;color:blue;font-size:30px;margin-left: 3px;">
+        <br> <br>
+        <label style="background-color: yellow;color:blue;font-size:30px;">ENTER PICS</label>   <input type="file" name="pics" style="background:transparent;color:blue;font-size:30px;" />
+        <br><br>
+        <input type="submit" value="SAVE" style="background-color: yellow;color:blue;font-size:30px;" />
+
+
+    </form>
+    
+    </div>
+    
+</body>
+</html>

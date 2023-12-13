@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Record</title>
+    <style> 
+    body
+{
+    background: url('./public/modify.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 1500px;
+        height: 600px;
+} 
+.cl1
+{
+    width:1500px;
+    height:1000;
+    /*background-color: red;*/
+    color:blue;
+    font-size: 30px;
+
+}
+.cl1 ul li
+{
+    float:left;
+    width:150px;
+    height:30px;
+    background:cyan;
+    list-style:none;
+    border:#0F0 solid 1px;	
+    margin-top:-110px;
+    margin-left:1050px;
+    text-align:center;
+    line-height:30px;
+    border-bottom-left-radius:50px;
+    border-top-right-radius:50px;
+    position:relative;
+    border-radius: 50px;
+    font-size: 30px;
+    
+}
+.cl1 a
+{
+    text-decoration:none;
+    color:#00F;
+    display:block;
+}
+
+.cl1 ul li:hover
+{
+    background:rgb(5, 0, 3);
+    font-size:44px;
+    font-weight:bold;
+    color:wheat;
+    width:250px;
+    height:70px;
+    line-height: 60px;
+}
+
+
+    table,
+        td,
+        th {
+            border: 1px solid rosybrown;
+            padding: 4px;
+            border-collapse: collapse;
+        }</style>
+</head>
+<body>
+    <div class="cl1"><p style="margin-left:530px;text-decoration: underline; margin-top:15px; font-size:60px; color:rgb(7, 7, 1);">MODIFY RECORD</p>
+        <ul>
+            <li><a href='home'>HOME</a></li> 
+            </ul>
+        
+    </div>
+ 
+    <form action="/modify" method="post" style="margin-left:100px;margin-right: 50px; margin-top:15px; font-size:60px; color:#FF0;">
+
+        <input name="empno" type="text" placeholder="Enter emp no...for searching" style="background:transparent;color:#FF0;font-size: 40px;width:600px;"><br>
+        <input name="name" type="text" placeholder="Enter name for modifying" style="background:transparent;color:#FF0;font-size: 40px;width:600px;"><br>
+        
+        <input type="submit" value="MODIFY" style="background:transparent ;color:#FF0;font-size: 40px;margin-left: 200px;" />
+
+    </form>
+    
+        
+    
+    <% if (data.length > 0 ){ %>
+            
+    <table style="background-color:#C06;color:#FF0;font-size:30px;margin-left:200px;">
+        
+        <tr>
+            <th>Name</th>
+            <th>Emp Id</th>
+            <th>Salary</th>
+        </tr>
+
+        <% for(var i=0; i<data.length; i++) { %>
+            <tr>
+                <td>
+                    <%= data[i][0] %>
+                </td>
+                <td>
+                    <%= data[i][1] %>
+                </td>
+                <td>
+                    <%= data[i][2] %>
+                </td>
+            </tr>
+            <% } %>
+
+    </table>
+    <% }else if(isQueryFirstTime) { %>
+        <h1>data not found</h1>
+    <% } %>
+    
+    
+</body>
+</html>

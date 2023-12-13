@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="v1  iewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Record</title>
+</head>
+<style>
+body
+{
+    background: url('./public/search.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 1500px;
+        height: 600px;
+} 
+ table,
+        td,
+        th {
+            border: 1px solid rosybrown;
+            padding: 4px;
+            border-collapse: collapse;
+        }
+.cl1
+{
+    width:1400px;
+    height:1000;
+   /* background-color: red;*/
+    color:blue;
+    font-size: 30px;
+
+}
+.cl1 ul li
+{
+    float:left;
+    width:150px;
+    height:30px;
+    background:cyan;
+    list-style:none;
+    border:#0F0 solid 1px;	
+    margin-top:-110px;
+    margin-left:1050px;
+    text-align:center;
+    line-height:30px;
+    border-bottom-left-radius:50px;
+    border-top-right-radius:50px;
+    position:relative;
+    border-radius: 50px;
+    font-size: 30px;
+    
+}
+.cl1 a
+{
+    text-decoration:none;
+    color:#00F;
+    display:block;
+}
+
+.cl1 ul li:hover
+{
+    background:#C06;
+    font-size:44px;
+    font-weight:bold;
+    color:wheat;
+    width:250px;
+    height:70px;
+    line-height: 60px;
+}
+
+
+
+</style>
+    
+<body>
+    <div class="cl1"><p style="margin-left:170px;text-decoration: underline; margin-top:15px; font-size:60px; color:rgb(17, 17, 0);">SEARCH RECORD</p>
+        <ul>
+            <li><a href='home'>HOME</a></li> 
+            </ul>
+        
+    </div>
+    
+    <div class="cl">
+    <form action="/search" method="post">
+
+        <input name="search" type="text" placeholder="ENTER EMPNO..." style="width:400px;height:50px;background:transparent;color:#00F;font-size:50px ;" >
+        <input type="submit" value="SEARCH" style="width:200px;height:50px;background:transparent;color:#00F;font-size:40px ;margin-left: 100px;" /><br><br>
+
+    </form>
+    <% if (data.length > 0 ){ %>
+    <table style="background-color:#C06;color:#FF0;font-size:50px;margin-left:200px;">
+        <tr>
+            <th>Name</th>
+            <th>Emp Id</th>
+            <th>Salary</th>
+            <th>PICS</th>
+        
+            </tr>
+        <% for(var i=0; i<data.length; i++) { %>
+            <tr style="background-color:#C06;color:#FF0;font-size:50px;margin-left:400px;">
+                <td>
+                    <%= data[i][0] %>
+                </td>
+                <td>
+                    <%= data[i][1] %>
+                </td>
+                <td>
+                    <%= data[i][2] %>
+                </td>
+                <td>
+                    <img src="<%= data[i][3] %>" width="90px" height="80px" /> 
+             </td>
+            </tr>
+            <% } %>
+
+    </table>
+    <% }else if(isQueryFirstTime) { %>
+        <h1>data not found</h1>
+    <% } %>
+    </div>
+    
+    
+</body>
+</html>
